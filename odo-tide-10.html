@@ -554,7 +554,7 @@ function calcTideHeight(date) {
   const t = (date - new Date(2024, 0, 1)) / (1000 * 3600);
   let h = MEAN_LEVEL;
   // 初期位相（糸満の実測に近づける）
-  const phases = { M2: 220, S2: 180, K1: 320, O1: 280, N2: 200 };
+  const phases = { M2:40, S2: 0, K1: 140, O1: 100, N2: 20 };
   for (const [name, p] of Object.entries(TIDE_PARAMS)) {
     const angle = (p.speed * t + phases[name]) * Math.PI / 180;
     h += p.amp * Math.cos(angle);
